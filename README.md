@@ -16,11 +16,11 @@ ujBootstrap provides version controlled Twitter Bootstrap resources to Jamroom 5
 
 >Note that Twitter Bootstrap 3 is currently alpha, and Jamroom 5 is currently in Beta, as is the ujBootstrap Docs module itself.
 
-*All of Jamroom's smarty functions will work in your docs templates, perfect for demonstrating how your module works.
-*Add docs pages simply by creating a template.tpl file, it will be automatically added to the menu.
-*Write your docs in simple, clear html. Twitter Bootstrap is really well documented, and you will probably learn something new at the same time.
-*Manages multiple versions of Twitter Bootstrap, so you can write this years docs in the current version and next years docs in a future version and your older docs will not be messed up by changes to the Bootstrap code. Optionally force a version on all ujBootstrap docs.
-*Basic access control to your docs. Set them to be readable by Admin only (default), logged in only, by quota, or make them publically available.
+* All of Jamroom's smarty functions will work in your docs templates, perfect for demonstrating how your module works.
+* Add docs pages simply by creating a template.tpl file, it will be automatically added to the menu.
+* Write your docs in simple, clear html. Twitter Bootstrap is really well documented, and you will probably learn something new at the same time.
+* Manages multiple versions of Twitter Bootstrap, so you can write this years docs in the current version and next years docs in a future version and your older docs will not be messed up by changes to the Bootstrap code. Optionally force a version on all ujBootstrap docs.
+* Basic access control to your docs. Set them to be readable by Admin only (default), logged in only, by quota, or make them publically available.
 
 
 ##Installation - Twitter Bootstrap Resources for Jamroom 5
