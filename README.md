@@ -10,12 +10,12 @@ Install the module and activate in the usual manner. You can then read this modu
 Smarty functions work in the docs, so you can demo your module features alongside their documentation.
 
 Enable your module (myModule) by adding a view to its index.php:
-[pre]function view_myModule_docs($_post,$_user,$_conf)
+function view_myModule_docs($_post,$_user,$_conf)
 {
    jrCore_page_title('myModule Docs');
    $out = ujBootstrap_read_docs($_post,$_user,$_conf,'myModule',$_conf['myModule_bootstrap_version']);
    return $out;
-}[/pre]
+}
 
 You create a page for your myModule docs by adding a file docs.tpl to /modules/myModule/templates/ - the url will be /mymoduleurl/docs
 
