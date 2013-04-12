@@ -17,13 +17,9 @@ ujBootstrap provides version controlled Twitter Bootstrap resources to Jamroom 5
 >Note that Twitter Bootstrap 3 is currently alpha, and Jamroom 5 is currently in Beta, as is the ujBootstrap Docs module itself.
 
 *All of Jamroom's smarty functions will work in your docs templates, perfect for demonstrating how your module works.
-
 *Add docs pages simply by creating a template.tpl file, it will be automatically added to the menu.
-
 *Write your docs in simple, clear html. Twitter Bootstrap is really well documented, and you will probably learn something new at the same time.
-
 *Manages multiple versions of Twitter Bootstrap, so you can write this years docs in the current version and next years docs in a future version and your older docs will not be messed up by changes to the Bootstrap code. Optionally force a version on all ujBootstrap docs.
-
 *Basic access control to your docs. Set them to be readable by Admin only (default), logged in only, by quota, or make them publically available.
 
 
@@ -37,21 +33,21 @@ ujBootstrap enabled modules can now use Bootstrap documentation. They need to co
         
 A docs.tpl template must be placed in your module templates directory. Start with a stub like this:
         
-<pre>{literal}
-    <div class="container">
-        <div class="row">
-        <div class="page-header">
-            #myModule Documentation -provided via ujBootstrap
-        </div>
-        <p>
+<pre>
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+        &lt;div class="page-header"&gt;
+            #myModule Documentation - provided via ujBootstrap
+        &lt;/div&gt;
+        &lt;p&gt;
             Documentation for myModule for Jamroom 5.
-        </p>
-        <p>
+        &lt;/p&gt;
+        &lt;p&gt;
             Write your documentation here using Twitter Bootstrap styles and javascript.
-        </p>
-        </div>
-    </div>
-{/literal}</pre>
+        &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
 
 Add the docs view to your module index.php
         
@@ -119,6 +115,12 @@ ujBootstrap loads the specified Bootstrap version js in addition to the skin js.
 It isn't very refined, just does what I need it to at this time (documenting a really cool maps module). Open to ideas if anyone else is interested in using it/trying it out.
 
 It does a very basic version thing so that different modules can use different versions of bootstrap. I'm also using this to keep track of css versions of bootstrap which I'm using in skin and modules - so part of the idea is that all bootstrap css and js can be kept in one location and linked to from various modules/skins/etc.
+
+
+##License 
+MIT
+
+##Credits
 
 Twitter Bootstrap: https://github.com/twitter/bootstrap
 
