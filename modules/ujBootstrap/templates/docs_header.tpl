@@ -51,9 +51,11 @@
                                    <link rel="shortcut icon" href="{$jamroom_url}/modules/ujBootstrap/{$bootstrap_version}/ico/favicon.png">
 
   </head>
-  
+{if $option == 'bootstrap_docs'}
+  <body class="bs-docs-docs" data-spy="scroll" data-target=".bs-docs-sidebar">
+{else}
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
-  {*<body class="bs-docs-docs" data-spy="scroll" data-target=".bs-docs-sidebar">*}
+{/if}
     <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -124,10 +126,13 @@
                         </ul>
                     </li>
 {/if}
+                    <li>
+                        <a href="{$jamroom_url}/{jrCore_module_url module="jrCore"}/dashboard">{jrCore_lang skin="jrElastic" id="17" default="dashboard"}</a>
+                    </li>
 {if jrUser_is_logged_in()}
 {if jrUser_is_admin()}
                     <li>
-                        <a href="{$jamroom_url}/{jrCore_module_url module="jrCore"}/dashboard">{jrCore_lang skin="jrElastic" id="17" default="dashboard"}</a>
+                        <a href="{$jamroom_url}/bootstrap/bootstrap_docs">TBS Docs</a>
                     </li>
 {/if}
 {if jrUser_is_master()}{jrCore_get_module_index module="jrCore" assign="url"}
