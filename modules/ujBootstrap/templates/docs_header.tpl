@@ -81,11 +81,21 @@
                         <a href="{$_url}">{$_docspage|replace:'_':' '|capitalize}</a>
                     </li>
 {/foreach}{/if}
-                </ul>
+                </ul>{debug}
 {if jrUser_is_logged_in()}
                 <ul class="nav pull-right">
-                    <li{if $option == 'bootstrap_docs'} class="active"{/if}>
-                        <a href="{$jamroom_url}/bootstrap/bootstrap_docs">TBS Docs</a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="docsmodsdd" role="button" data-toggle="dropdown" data-target="#" href="{$jamroom_url}/{$module_url}/admin/info">Other Docs <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="docsmodsdd">
+                            <li{if $option == 'bootstrap_docs'} class="active"{/if}>
+                                <a href="{$jamroom_url}/bootstrap/bootstrap_docs">Twitter Bootstrap</a>
+                            </li>
+{foreach from=$docs_modules item="docs_module"}
+                            <li{if $option == $docs_module.module} class="active"{/if}>
+                                <a href="{$docs_module.url}">{$docs_module.module}</a>
+                            </li>
+{/foreach}
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" id="userdd" role="button" data-toggle="dropdown" data-target="#" href="{$jamroom_url}/{$_user.profile_home_url}">{$_user.profile_home_name} <span class="caret"></span></a>

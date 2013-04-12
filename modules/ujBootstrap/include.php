@@ -128,14 +128,31 @@ function ujBootstrap_make_menu($module)
     return $_out;
 }
 
+// Checks 
+function ujBootstrap_enabled_modules()
+{
+    global $_conf, $_mods;
+    foreach ($_conf as $_c => $v) {
+        $pos = strpos($_c,'_bootstrap_version');
+        if ($pos > 2) {
+            $module = str_replace('_bootstrap_version','',$_c);
+            $file = $_conf['jrCore_base_dir'].'/modules/'.$module.'/templates/docs.tpl';
+            if (file_exists($file)) {
+                // if the module config setting is set and a docs.tpl file exists
+                $_out["{$module}"] = $_conf['jrCore_base_url'].'/'.$_mods["{$module}"]['module_url'].'/docs';
+            }
+        }
+    }
+    return $_out;
+}
+
 
 //------------------------------
 // docs (view the docs)
 //------------------------------
-function ujBootstrap_read_docs($_post,$_user,$_conf,$module,$version)
+function ujBootstrap_read_docs($_post,$_user,$_conf,$version)
 {
     global $_mods;
-
     $_rt = $_post;
     $error = '';
     // check that ujBootstrap exists and is enabled 
@@ -178,6 +195,12 @@ function ujBootstrap_read_docs($_post,$_user,$_conf,$module,$version)
     // do the css and js
     //ujBootstrap_js_css($_rt['bootstrap_version']);
     
+    $module_docs_items = ujBootstrap_enabled_modules();
+    foreach ($module_docs_items as $docmod => $_modurl) {
+        $_rt['docs_modules']["{$docmod}"]['url'] = $_modurl;
+        $_rt['docs_modules']["{$docmod}"]['module'] = $docmod;
+    }
+
     $_menu = ujBootstrap_make_menu($_post['module']);
     if(($key = array_search('docs_footer.tpl', $_menu)) !== false) {
         $header_dir = $_post['module'];
