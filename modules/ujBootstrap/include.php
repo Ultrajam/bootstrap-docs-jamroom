@@ -166,7 +166,7 @@ function ujBootstrap_enabled_modules()
 //------------------------------
 // docs (view the docs)
 //------------------------------
-function ujBootstrap_read_docs($_post,$_user,$_conf,$version)
+function ujBootstrap_read_docs($_post,$_user,$_conf)
 {
     global $_mods;
     $_rt = $_post;

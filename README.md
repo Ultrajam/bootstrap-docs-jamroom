@@ -10,7 +10,7 @@ Install the module and activate in the usual manner. You can then read this modu
 Smarty functions work in the docs, so you can demo your module features alongside their documentation.
 
 
-#ujBootstrap Docs - Twitter Bootstrap Resources for Jamroom 5
+#ujBootstrap Docs - Twitter Bootstrap Docs & Resources for Jamroom 5
 
 ujBootstrap provides version controlled Twitter Bootstrap resources to Jamroom 5. It loads these resources in place of the skin css on documentation pages for each module. So you can use nice Twitter Bootstrap styled documentation for your modules with very little effort, regardless of your choice of skin.
 
@@ -23,7 +23,7 @@ ujBootstrap provides version controlled Twitter Bootstrap resources to Jamroom 5
 * Basic access control to your docs. Set them to be readable by Admin only (default), logged in only, by quota, or make them publically available.
 
 
-##Installation - Twitter Bootstrap Resources for Jamroom 5
+##Installation - Making your module use ujBootstrap for its docs
 
 Upload the module to your server.
         
@@ -58,7 +58,7 @@ Add the docs view to your module index.php
 function view_myModule_docs($_post,$_user,$_conf)
 {
     jrCore_page_title('myModule Docs');
-    $out = ujBootstrap_read_docs($_post,$_user,$_conf,'myModule',$_conf['myModule_bootstrap_version']);
+    $out = ujBootstrap_read_docs($_post,$_user,$_conf);
     return $out;
 }
 </pre>
@@ -97,7 +97,7 @@ Once the docs_mypage.tpl template has been created a link will automatically app
 So press on and write your module's docs in lovely Twitter Bootstrap styled html5.
 
 
-##Permissions - Twitter Bootstrap Resources for Jamroom 5
+##Permissions - Incomplete, Admin only for now
 
 ###Admin/Logged In/Public
 You can set each module to restrict viewing of the docs to admin only.
