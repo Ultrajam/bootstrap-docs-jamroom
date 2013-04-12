@@ -150,7 +150,7 @@ function view_myModule_docs($_post,$_user,$_conf)
 
 
         <div class="page-header">
-            <h2>Resources Loaded <small> Twitter Bootstrap Resources for Jamroom 5</small></h2>
+            <h2>Resources Loaded <small> Twitter Bootstrap Resources</small></h2>
         </div>
 
         <p>
@@ -272,7 +272,7 @@ So press on and write your module's docs in lovely Twitter Bootstrap styled html
 You can set each module to restrict viewing of the docs to admin only.
 Additionally you can set ujBootstrap to override each modules permissions setting.
 
-##Resources Loaded - Twitter Bootstrap Resources for Jamroom 5
+##Resources Loaded
 
 ujBootstrap loads the specified Bootstrap version css in place of the skin css. Apart from the skin css all other module and core css files are loaded in the usual manner.
 
