@@ -10,7 +10,7 @@ Install the module and activate in the usual manner. You can then read this modu
 Smarty functions work in the docs, so you can demo your module features alongside their documentation.
 
 
-#ujBootstrap Docs - Twitter Bootstrap Docs & Resources for Jamroom 5
+#ujBootstrap Docs - Documentation Module Documentation!
 
 ujBootstrap provides version controlled Twitter Bootstrap resources to Jamroom 5. It loads these resources in place of the skin css on documentation pages for each module. So you can use nice Twitter Bootstrap styled documentation for your modules with very little effort, regardless of your choice of skin.
 
