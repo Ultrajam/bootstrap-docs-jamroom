@@ -72,53 +72,21 @@
                     <li>
                         <a href="{$jamroom_url}/{$module_url}/admin/info">{$module}</a>
                     </li>
-                    <li class="active">
+                    <li{if $option !== 'bootstrap_docs' && $_post['_1'] == ''} class="active"{/if}>
                         <a href="{$jamroom_url}/{$module_url}/docs">Docs</a>
                     </li>
 {if isset($menu_items)}{foreach from=$menu_items key="_docspage" item="_url"}
-{if $_docspage == $_post['_1']}{assign var="active" value="active"}{assign var="active_set" value="true"}{/if}
-                    <li class="{$active}">
-                        <a href="{$_menu_item}">{$_docspage|replace:'_':' '|capitalize}</a>
+{if $_docspage == $_1}{assign var="active" value=' class="active"'}{/if}
+                    <li{$active}>
+                        <a href="{$_url}">{$_docspage|replace:'_':' '|capitalize}</a>
                     </li>
 {/foreach}{/if}
-{*if isset($menu_items_dropdown)}
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#"  href="{$jamroom_url}/docs_index">Docs <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-{foreach from=$menu_items key="_docspage" item="_url"}
-                            <li>
-                                <a href="{$_menu_item}">{$_docspage|replace:'_':' '|capitalize}</a>
-                            </li>
-{/foreach}
-                        </ul>
-                    </li>
-{/if*}
                 </ul>
-{*                <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" id="tbsdd" role="button" data-toggle="dropdown" data-target="#" href="{$jamroom_url}/bootstrap/bootstrap_docs">TBS Docs <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="tbsdd">
-                            <li>
-                                <a href="{$jamroom_url}/bootstrap/bootstrap_docs" data-toggle="tooltip" data-placement="right" title="Getting started"><span class="glyphicon glyphicon-list"></span></a>
-                            </li>
-                            <li>
-                                <a href="{$jamroom_url}/modules/ujBootstrap/{$bootstrap_version}/docs/index.html" data-toggle="tooltip" data-placement="right" title="CSS"><span class="glyphicon glyphicon-tint"></span></a>
-                            </li>
-                            <li>
-                                <a href="/components" data-toggle="tooltip" data-placement="right" title="Components"><span class="glyphicon glyphicon-fire"></span></a>
-                            </li>
-                            <li>
-                                <a href="/javascript" data-toggle="tooltip" data-placement="right" title="JavaScript plugins"><span class="glyphicon glyphicon-dashboard"></span></a>
-                            </li>
-                            <li>
-                                <a href="/customize" data-toggle="tooltip" data-placement="right" title="Customize"><span class="glyphicon glyphicon-cog"></span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-*}
 {if jrUser_is_logged_in()}
                 <ul class="nav pull-right">
+                    <li{if $option == 'bootstrap_docs'} class="active"{/if}>
+                        <a href="{$jamroom_url}/bootstrap/bootstrap_docs">TBS Docs</a>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" id="userdd" role="button" data-toggle="dropdown" data-target="#" href="{$jamroom_url}/{$_user.profile_home_url}">{$_user.profile_home_name} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="userdd">
@@ -126,13 +94,10 @@
                         </ul>
                     </li>
 {/if}
-                    <li>
-                        <a href="{$jamroom_url}/{jrCore_module_url module="jrCore"}/dashboard">{jrCore_lang skin="jrElastic" id="17" default="dashboard"}</a>
-                    </li>
 {if jrUser_is_logged_in()}
 {if jrUser_is_admin()}
                     <li>
-                        <a href="{$jamroom_url}/bootstrap/bootstrap_docs">TBS Docs</a>
+                        <a href="{$jamroom_url}/{jrCore_module_url module="jrCore"}/dashboard">{jrCore_lang skin="jrElastic" id="17" default="dashboard"}</a>
                     </li>
 {/if}
 {if jrUser_is_master()}{jrCore_get_module_index module="jrCore" assign="url"}

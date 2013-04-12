@@ -57,9 +57,9 @@ function ujBootstrap_js_css($bootstrap_version) {
         if (isset($_conf['ujBootstrap_api_key']) && strlen($_conf['ujBootstrap_api_key']) > 10) {
             //$api_key = '&key='.$_conf['ujBootstrap_api_key'];
         }
-        $_js = array('source' => "http://maps.google.com/maps/api/js?sensor=false&language=en{$api_key}");
+        //$_js = array('source' => "http://maps.google.com/maps/api/js?sensor=false&language=en{$api_key}");
         //jrCore_create_page_element('javascript_href',$_js);
-        jrCore_set_flag('jrcore_bootstrap_js_included',1);
+        //jrCore_set_flag('jrcore_bootstrap_js_included',1);
         // css for the toolbar must be in the main doc, other css in the html head for the iframe
         //$_css = array('source' => "{$_conf['jrCore_base_url']}/modules/ujBootstrap/contrib/jquery-addressPicker/addresspicker.css");
         //jrCore_create_page_element('css_href',$_css);
