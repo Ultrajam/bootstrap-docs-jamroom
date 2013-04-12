@@ -26,6 +26,7 @@ function ujBootstrap_meta() {
     return $_tmp;
 }
 
+
 /**
  * init
  */
@@ -34,6 +35,9 @@ function ujBootstrap_init() {
     return TRUE;
 }
 
+//------------------------------
+// Not currently in use
+//------------------------------
 function ujBootstrap_js_css($bootstrap_version) {
     global $_conf;
 
@@ -67,6 +71,9 @@ function ujBootstrap_js_css($bootstrap_version) {
     return true;
 }
 
+//------------------------------
+// Returns an array of versions
+//------------------------------
 function ujBootstrap_get_versions($default)
 {
     global $_conf;
@@ -80,6 +87,10 @@ function ujBootstrap_get_versions($default)
     return $_versions;
 }
 
+//------------------------------
+// Prepares a list of bootstrap versions based on directory name 
+// Versions should be named like 3.1.2 and be placed directly in the module dir, not in contribs
+//------------------------------
 function ujBootstrap_get_version_directorys($dir)
 {
     $_out = false;
@@ -106,6 +117,9 @@ function ujBootstrap_get_version_directorys($dir)
     return $_out;
 }
 
+//------------------------------
+// Makes the pages of the docs for current module
+//------------------------------
 function ujBootstrap_make_menu($module)
 {
     global $_conf;
@@ -128,7 +142,9 @@ function ujBootstrap_make_menu($module)
     return $_out;
 }
 
-// Checks 
+//------------------------------
+// Checks which modules have docs for links in "Other Docs" top menu item
+//------------------------------
 function ujBootstrap_enabled_modules()
 {
     global $_conf, $_mods;
@@ -221,31 +237,24 @@ function ujBootstrap_read_docs($_post,$_user,$_conf,$version)
         $_menu_item = str_replace('docs_','',$_menu_item);
         $_rt['menu_items'][$_menu_item] = $_conf['jrCore_base_url'].'/'.$_post['module_url'].'/docs/'.$_menu_item;
     }
-        // Set title, parse and return
-        jrCore_page_title('Docs');
+    // Set title, parse and return
+    jrCore_page_title('Docs');
 
-        // Parse templates
-        $out = '';
-        $out .= jrCore_parse_template('docs_header.tpl',$_rt,$header_dir);
-        if ($error == '') {
-            $out .= jrCore_parse_template($tpl,$_rt,$_post['module']);
-        } else {
-            $out = $error;
-        }
-        
-        $out .= jrCore_parse_template('docs_footer.tpl',$_rt,$footer_dir);
-
-
+    // Parse templates
+    $out = '';
+    $out .= jrCore_parse_template('docs_header.tpl',$_rt,$header_dir);
+    if ($error == '') {
+        $out .= jrCore_parse_template($tpl,$_rt,$_post['module']);
+    } else {
+        $out = $error;
+    }
+    $out .= jrCore_parse_template('docs_footer.tpl',$_rt,$footer_dir);
 
     return $out;
 }
 
 /**
- * Jamroom CSS SRC URL generator
- *
- * @param array $params parameters for function
- * @param object $smarty Smarty object
- * @return string
+ * Custom CSS SRC URL generator
  */
 function smarty_function_ujBootstrap_css_src($params,$smarty)
 {
@@ -262,9 +271,7 @@ function smarty_function_ujBootstrap_css_src($params,$smarty)
 
 
 /**
- * Create a new master CSS files from module and skin CSS files
- * @param string $skin Skin to create CSS file for
- * @return string Returns MD5 checksum of CSS contents
+ * Custom create master CSS
  */
 function ujBootstrap_create_master_css($skin)
 {
@@ -330,11 +337,7 @@ function ujBootstrap_create_master_css($skin)
 
 
 /**
- * Jamroom Javascript SRC URL generator
- *
- * @param array $params parameters for function
- * @param object $smarty Smarty object
- * @return string
+ * Custom Javascript SRC URL generator (not currently in use)
  */
 function smarty_function_ujBootstrap_javascript_src($params,$smarty)
 {
@@ -350,9 +353,7 @@ function smarty_function_ujBootstrap_javascript_src($params,$smarty)
 
 
 /**
- * jrCore_create_master_javascript
- * @param string $skin Skin to create Javascript file for
- * @return string Returns MD5 checksum of Javascript contents
+ * Custom create Javascript (not currently in use)
  */
 function ujBootstrap_create_master_javascript($skin)
 {

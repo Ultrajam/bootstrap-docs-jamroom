@@ -17,7 +17,7 @@ function view_ujBootstrap_docs($_post,$_user,$_conf)
 {
     // Set title, parse and return
     jrCore_page_title('ujBootstrap Docs');
-    $out = ujBootstrap_read_docs($_post,$_user,$_conf,'ujBootstrap',$_conf['ujBootstrap_bootstrap_version']);
+    $out = ujBootstrap_read_docs($_post,$_user,$_conf,$_conf['ujBootstrap_bootstrap_version']);
 
     return $out;
 }
@@ -29,7 +29,7 @@ function view_ujBootstrap_bootstrap_docs($_post,$_user,$_conf)
 {
     // Set title, parse and return
     jrCore_page_title('Twitter Bootstrap Docs');
-    $out = ujBootstrap_read_docs($_post,$_user,$_conf,'ujBootstrap',$_conf['ujBootstrap_bootstrap_version']);
+    $out = ujBootstrap_read_docs($_post,$_user,$_conf,$_conf['ujBootstrap_bootstrap_version']);
 
     return $out;
 }

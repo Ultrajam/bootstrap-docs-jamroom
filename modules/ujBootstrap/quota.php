@@ -17,7 +17,7 @@ function ujBootstrap_quota_config()
 {
     // "Allowed Access" option will be setup and initialized automatically by the Core
     
-    // Bootstrap Version
+    // Bootstrap Version Setting
     $_vers_dirs = ujBootstrap_get_versions();
     $_tmp = array(
         'name'     => 'bootstrap_version',
