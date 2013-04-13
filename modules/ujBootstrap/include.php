@@ -17,7 +17,7 @@ function ujBootstrap_meta() {
     $_tmp = array(
         'name'        => 'Bootstrap',
         'url'         => 'bootstrap',
-        'version'     => '1.0.0',
+        'version'     => '1.0.1',
         'developer'   => 'Ultrajam, &copy;' . strftime('%Y'),
         'description' => 'Provides Twitter Bootstrap Docs &amp; Resources to Jamroom 5',
         'support'     => 'http://www.jamroom.net/phpBB2',
