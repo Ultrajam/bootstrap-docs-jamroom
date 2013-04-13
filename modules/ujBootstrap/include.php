@@ -31,7 +31,15 @@ function ujBootstrap_meta() {
  * init
  */
 function ujBootstrap_init() {
-    
+    $doc_modules = ujBootstrap_enabled_modules();
+    foreach ($doc_modules as $_doc_mod => $url) {
+        if ($_doc_mod !== 'ujBootstrap') {
+            // Add button link for each module using ujBootstrap - appears under each module Tools tab.
+            jrCore_register_module_feature('jrCore','tool_view',$_doc_mod,'docs',array($_doc_mod.' Docs','Documentation for the '.$_doc_mod.' module'));
+        }
+        // Add button link for each module under the ujBootstrap Tools tab.
+        jrCore_register_module_feature('jrCore','tool_view','ujBootstrap',$url,array($_doc_mod.' Docs','Documentation for the '.$_doc_mod.' module'));
+    }    
     return TRUE;
 }
 
