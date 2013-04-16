@@ -31,6 +31,9 @@ function ujBootstrap_meta() {
  * init
  */
 function ujBootstrap_init() {
+    
+    jrCore_register_module_feature('jrCore','quota_support','ujBootstrap','off');
+
     $doc_modules = ujBootstrap_enabled_modules();
     foreach ($doc_modules as $_doc_mod => $url) {
         if ($_doc_mod !== 'ujBootstrap') {
