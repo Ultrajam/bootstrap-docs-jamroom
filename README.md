@@ -63,7 +63,7 @@ function view_myModule_docs($_post,$_user,$_conf)
 }
 </pre>
 
-Optionally add the config setting to your module config.php. Doing this ensures that your module will continue to use the css and js from the bootstrap version you made it with, even if newer versions are added later. It will also ensure that a link to your module docs is created in the Other Docs menu item.
+Add the config setting to your module config.php. Doing this ensures that your module will continue to use the css and js from the bootstrap version you made it with, even if newer versions are added later. It will also ensure that a link to your module docs is created in the Other Docs menu item.
         
 <pre>
 //------------------------------

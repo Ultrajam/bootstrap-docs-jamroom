@@ -17,7 +17,7 @@ function ujBootstrap_meta() {
     $_tmp = array(
         'name'        => 'Bootstrap',
         'url'         => 'bootstrap',
-        'version'     => '1.0.1',
+        'version'     => '1.0.2',
         'developer'   => 'Ultrajam, &copy;' . strftime('%Y'),
         'description' => 'Provides Twitter Bootstrap Docs &amp; Resources to Jamroom 5',
         'support'     => 'http://www.jamroom.net/phpBB2',
@@ -39,7 +39,7 @@ function ujBootstrap_init() {
         }
         // Add button link for each module under the ujBootstrap Tools tab.
         jrCore_register_module_feature('jrCore','tool_view','ujBootstrap',$url,array($_doc_mod.' Docs','Documentation for the '.$_doc_mod.' module'));
-    }    
+    }
     return TRUE;
 }
 
