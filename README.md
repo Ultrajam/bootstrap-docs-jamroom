@@ -61,25 +61,6 @@ Add the following to your module's init function (changing ujImagePicker for you
     jrCore_register_module_feature('jrCore','tool_view','ujImagePicker','docs',array('ujImagePicker Docs','Documentation for the ujImagePicker module'));
 </pre>
 
-Optionally add the config setting to your module config.php. Doing this ensures that your module will continue to use the css and js from the bootstrap version you made it with, even if newer versions are added later. It will also ensure that a link to your module docs is created in the Other Docs menu item.
-        
-<pre>
-//------------------------------
-// Specific version for a module
-//------------------------------
-    // Bootstrap version
-    $_versions = ujBootstrap_get_versions();
-    $_tmp = array(
-        'name'     => 'bootstrap_version',
-        'label'    => 'bootstrap version',
-        'type'     => 'select',
-        'options'  => $_versions,
-        'default'  => '3.0.0',
-        'help'     => 'Select the bootstrap version to use as a base.'
-    );
-    jrCore_register_setting('myModule',$_tmp);
-</pre>
-
 And there you have it, easy bootstrapped documentation for your module.
 
 
