@@ -9,6 +9,10 @@ Install the module and activate in the usual manner. You can then read this modu
 
 Smarty functions work in the docs, so you can demo your module features alongside their documentation.
 
+Note: Uses an older version of Twitter Bootstrap 3 WiP than is current on the Twitter repo.
+
+v 1.0.5 tested with Jamroom 5 beta 9.
+
 
 #ujBootstrap Docs - Documentation Module Documentation!
 
